@@ -1,17 +1,17 @@
 import ListItem from './ListItem/ListItem';
-import { RemoveButton } from '../StyledComponents/styledComponents.styles';
 import { Component } from 'react';
-import { EditButton } from '../StyledComponents/styledComponents.styles';
+import { StyledEditButton } from '../StyledComponents/styledComponents.styles';
 import { StyledContainer } from '../StyledComponents/styledComponents.styles';
+import RemoveButton from './ListItem/RemoveButton';
 
 export default class TaskContainer extends Component {
   render() {
-    const { text, id } = this.props;
+    const { tasks, text, id, index, remove } = this.props;
     return (
       <StyledContainer>
-        <ListItem text={text} id={id} />
-        <EditButton>Edit</EditButton>
-        <RemoveButton>Remove</RemoveButton>
+        <ListItem text={text} id={id} index={index} />
+        <StyledEditButton>Edit</StyledEditButton>
+        <RemoveButton tasks={tasks} id={id} remove={remove} />
       </StyledContainer>
     );
   }

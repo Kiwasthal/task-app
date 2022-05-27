@@ -35,14 +35,21 @@ class App extends Component {
     }));
   }
 
+  removeFromArray(number) {
+    this.setState({
+      tasksArray: this.state.tasksArray.filter(task => task.id !== number),
+    });
+  }
+
   render() {
     const updateInput = this.updateInput.bind(this);
     const updateTasksArray = this.updateTasksArray.bind(this);
+    const removeFromArray = this.removeFromArray.bind(this);
     const taskArray = this.state.tasksArray;
     return (
       <div className="App">
         <InputManager handleInput={updateInput} addTask={updateTasksArray} />
-        <Overview tasks={taskArray} />
+        <Overview tasks={taskArray} remove={removeFromArray} />
       </div>
     );
   }

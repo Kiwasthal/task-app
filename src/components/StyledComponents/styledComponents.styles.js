@@ -22,13 +22,13 @@ const StyledAddButton = styled.button`
   }
 `;
 
-const RemoveButton = styled(StyledAddButton)`
+const StyledRemoveButton = styled(StyledAddButton)`
   padding: 6px 14px;
   background-color: #ef4444;
   font-size: 13px;
 `;
 
-const EditButton = styled(StyledAddButton)`
+const StyledEditButton = styled(StyledAddButton)`
   padding: 6px 4px;
   border-color: #5eead4;
   background-color: #2dd4bf;
@@ -106,7 +106,7 @@ export {
   StyledInputManager,
   StyledOverview,
   StyledListItem,
-  RemoveButton,
-  EditButton,
+  StyledRemoveButton,
+  StyledEditButton,
   StyledContainer,
 };
