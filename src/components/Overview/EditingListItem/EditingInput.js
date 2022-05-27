@@ -3,7 +3,7 @@ import { Component } from 'react';
 
 export class EditingInput extends Component {
   render() {
-    const { value, handleInput } = this.props;
+    const { handleInput } = this.props;
     return <StyledEditInput onChange={handleInput} />;
   }
 }

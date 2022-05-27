@@ -6,12 +6,12 @@ import EditButton from './ListItem/EditButton';
 
 export default class TaskContainer extends Component {
   render() {
-    const { text, id, index, remove, edit, confirmEdit } = this.props;
+    const { text, id, index, remove, edit} = this.props;
     return (
       <StyledContainer>
         <ListItem text={text} id={id} index={index} />
         <EditButton id={id} edit={edit} />
-        <RemoveButton id={id} remove={remove} confirmEdit={confirmEdit} />
+        <RemoveButton id={id} remove={remove}  />
       </StyledContainer>
     );
   }

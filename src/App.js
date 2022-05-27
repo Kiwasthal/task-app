@@ -23,7 +23,6 @@ class App extends Component {
         id: this.state.task.id,
       },
     });
-    console.log(this.state);
   }
 
   updateTasksArray(e) {
