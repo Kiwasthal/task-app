@@ -12,6 +12,7 @@ class App extends Component {
       task: {
         inputValue: '',
         id: uniqid(),
+        editing: false,
       },
     };
   }
@@ -22,6 +23,7 @@ class App extends Component {
         id: this.state.task.id,
       },
     });
+    console.log(this.state);
   }
 
   updateTasksArray(e) {
@@ -35,9 +37,18 @@ class App extends Component {
     }));
   }
 
-  removeFromArray(number) {
+  removeFromArray(buttonId) {
     this.setState({
-      tasksArray: this.state.tasksArray.filter(task => task.id !== number),
+      tasksArray: this.state.tasksArray.filter(task => task.id !== buttonId),
+    });
+  }
+
+  changeEditingStatus(buttonId) {
+    this.setState({
+      tasksArray: this.state.tasksArray.map(task => {
+        if (task.id === buttonId) task.editing = true;
+        return task;
+      }),
     });
   }
 
@@ -45,11 +56,17 @@ class App extends Component {
     const updateInput = this.updateInput.bind(this);
     const updateTasksArray = this.updateTasksArray.bind(this);
     const removeFromArray = this.removeFromArray.bind(this);
+    const changeEditingStatus = this.changeEditingStatus.bind(this);
     const taskArray = this.state.tasksArray;
     return (
       <div className="App">
         <InputManager handleInput={updateInput} addTask={updateTasksArray} />
-        <Overview tasks={taskArray} remove={removeFromArray} />
+        <Overview
+          tasks={taskArray}
+          remove={removeFromArray}
+          initEdit={changeEditingStatus}
+          handleInput={updateInput}
+        />
       </div>
     );
   }

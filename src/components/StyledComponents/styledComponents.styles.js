@@ -31,6 +31,13 @@ const StyledRemoveButton = styled(StyledAddButton)`
 const StyledEditButton = styled(StyledAddButton)`
   padding: 6px 4px;
   border-color: #5eead4;
+  background-color: #4ade80;
+  font-size: 13px;
+`;
+
+const StyledConfirmEditButton = styled(StyledAddButton)`
+  padding: 6px 4px;
+  border-color: #5eead4;
   background-color: #2dd4bf;
   font-size: 13px;
 `;
@@ -55,6 +62,12 @@ const StyledInput = styled.input`
       color: #a3e635;
     }
   }
+`;
+
+const StyledEditInput = styled(StyledInput)`
+  height: 90%;
+  padding: 0;
+  font-size: 12px;
 `;
 
 const StyledInputManager = styled.div`
@@ -109,4 +122,6 @@ export {
   StyledRemoveButton,
   StyledEditButton,
   StyledContainer,
+  StyledConfirmEditButton,
+  StyledEditInput,
 };
