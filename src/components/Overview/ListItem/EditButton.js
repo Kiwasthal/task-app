@@ -4,7 +4,7 @@ import { Component } from 'react';
 
 class EditButton extends Component {
   render() {
-    const { tasks, id, edit } = this.props;
+    const { id, edit } = this.props;
     return <StyledEditButton onClick={() => edit(id)}>Edit</StyledEditButton>;
   }
 }

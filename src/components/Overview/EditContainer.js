@@ -6,12 +6,12 @@ import ConfirmEditButton from './EditingListItem/ConfirmEditButton';
 
 export default class EditContainer extends Component {
   render() {
-    const { tasks, text, id, index, remove, edit, handleInput } = this.props;
+    const { text, id, index, remove, handleInput, confirmEdit } = this.props;
     return (
       <StyledContainer>
         <EditingInput value={text} handleInput={handleInput} />
-        <ConfirmEditButton />
-        <RemoveButton />
+        <ConfirmEditButton id={id} confirmEdit={confirmEdit} />
+        <RemoveButton id={id} remove={remove} />
       </StyledContainer>
     );
   }

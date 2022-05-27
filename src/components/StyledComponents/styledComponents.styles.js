@@ -65,7 +65,7 @@ const StyledInput = styled.input`
 `;
 
 const StyledEditInput = styled(StyledInput)`
-  height: 90%;
+  height: 85%;
   padding: 0;
   font-size: 12px;
 `;

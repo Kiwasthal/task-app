@@ -37,6 +37,19 @@ class App extends Component {
     }));
   }
 
+  editTasksArray(e, id) {
+    e.preventDefault();
+    this.setState({
+      tasksArray: this.state.tasksArray.map(task => {
+        if (task.id === id) {
+          task.inputValue = this.state.task.inputValue;
+          task.editing = false;
+        }
+        return task;
+      }),
+    });
+  }
+
   removeFromArray(buttonId) {
     this.setState({
       tasksArray: this.state.tasksArray.filter(task => task.id !== buttonId),
@@ -57,6 +70,7 @@ class App extends Component {
     const updateTasksArray = this.updateTasksArray.bind(this);
     const removeFromArray = this.removeFromArray.bind(this);
     const changeEditingStatus = this.changeEditingStatus.bind(this);
+    const editTasksArray = this.editTasksArray.bind(this);
     const taskArray = this.state.tasksArray;
     return (
       <div className="App">
@@ -66,6 +80,7 @@ class App extends Component {
           remove={removeFromArray}
           initEdit={changeEditingStatus}
           handleInput={updateInput}
+          confirmEdit={editTasksArray}
         />
       </div>
     );

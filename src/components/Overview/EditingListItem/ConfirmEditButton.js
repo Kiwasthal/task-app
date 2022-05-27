@@ -3,7 +3,12 @@ import { StyledConfirmEditButton } from '../../StyledComponents/styledComponents
 
 class ConfirmEditButton extends Component {
   render() {
-    return <StyledConfirmEditButton>Confirm</StyledConfirmEditButton>;
+    const { confirmEdit, id } = this.props;
+    return (
+      <StyledConfirmEditButton onClick={e => confirmEdit(e, id)}>
+        Confirm
+      </StyledConfirmEditButton>
+    );
   }
 }
 

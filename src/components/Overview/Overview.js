@@ -5,7 +5,7 @@ import { Component } from 'react';
 
 export class Overview extends Component {
   render() {
-    const { tasks, remove, initEdit, handleInput } = this.props;
+    const { tasks, remove, initEdit, handleInput, confirmEdit } = this.props;
     const displayTasks = tasks.map((task, index) => {
       if (task.editing)
         return (
@@ -18,6 +18,7 @@ export class Overview extends Component {
             id={task.id}
             tasks={tasks}
             handleInput={handleInput}
+            confirmEdit={confirmEdit}
           />
         );
       else
@@ -29,7 +30,6 @@ export class Overview extends Component {
             key={task.id}
             text={task.inputValue}
             id={task.id}
-            tasks={tasks}
           />
         );
     });
