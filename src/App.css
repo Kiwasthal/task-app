@@ -1,9 +1,18 @@
+body {
+  margin: 0;
+}
+
 .App {
   padding: 0;
   margin: 0;
   height: 100vh;
   width: 100vw;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+    'head head head'
+    'emptyR inputManager emptyL'
+    'emptyR taskDisplay emptyL';
+  grid-template-rows: 10vh 30vh 1fr;
+  justify-content: center;
+  align-items: center;
 }
