@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const StyledAddBUtton = styled.button`
+const StyledAddButton = styled.button`
   border: 2px solid #4ade80;
   background-color: #4ade80;
   color: #fff;
@@ -8,7 +8,6 @@ const StyledAddBUtton = styled.button`
   text-align: center;
   text-decoration: none;
   display: inline-block;
-
   font-size: 20px;
   font-weight: 600;
   letter-spacing: 1px;
@@ -23,6 +22,19 @@ const StyledAddBUtton = styled.button`
   }
 `;
 
+const RemoveButton = styled(StyledAddButton)`
+  padding: 6px 14px;
+  background-color: #ef4444;
+  font-size: 13px;
+`;
+
+const EditButton = styled(StyledAddButton)`
+  padding: 6px 4px;
+  border-color: #5eead4;
+  background-color: #2dd4bf;
+  font-size: 13px;
+`;
+
 const StyledInput = styled.input`
   border: 2px solid #4ade80;
   background-color: #fff;
@@ -30,10 +42,18 @@ const StyledInput = styled.input`
   padding: 10px 22px;
   font-size: 24px;
   transition: all 0.2s ease-in;
+  &::placeholder {
+    color: #4ade80;
+    transition: all 0.2s ease-in;
+  }
   &:focus {
+    background-color: #f7fee7;
     border-radius: 20px;
     outline: none;
     border: 2px solid #a3e635;
+    &::placeholder {
+      color: #a3e635;
+    }
   }
 `;
 
@@ -58,7 +78,6 @@ const StyledOverview = styled.div`
 `;
 
 const StyledListItem = styled.li`
-  margin-top: 4px;
   font-size: 24px;
   color: #4ade80;
   font-size: 18px;
@@ -67,15 +86,27 @@ const StyledListItem = styled.li`
   list-style-type: none;
   width: 90%;
   border: 2px solid #ddd;
-  height: 5%;
   display: flex;
   align-items: center;
 `;
 
+const StyledContainer = styled.div`
+  display: grid;
+  width: 90%;
+  margin-top: 10px;
+
+  overflow: hidden;
+  align-items: center;
+  grid-template-columns: 60% auto auto;
+`;
+
 export {
-  StyledAddBUtton,
+  StyledAddButton,
   StyledInput,
   StyledInputManager,
   StyledOverview,
   StyledListItem,
+  RemoveButton,
+  EditButton,
+  StyledContainer,
 };

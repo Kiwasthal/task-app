@@ -3,8 +3,8 @@ import { Component } from 'react';
 
 class ListItem extends Component {
   render() {
-    const { text } = this.props;
-    return <StyledListItem>{text}</StyledListItem>;
+    const { text, id } = this.props;
+    return <StyledListItem key={id}>{text}</StyledListItem>;
   }
 }
 

@@ -2,39 +2,47 @@ import { Component } from 'react';
 import './App.css';
 import InputManager from './components/InputManager/InputManager';
 import Overview from './components/Overview/Overview';
+import uniqid from 'uniqid';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       tasksArray: [],
-      inputValue: '',
+      task: {
+        inputValue: '',
+        id: uniqid(),
+      },
     };
   }
   updateInput(e) {
     this.setState({
-      inputValue: e.target.value,
+      task: {
+        inputValue: e.target.value,
+        id: this.state.task.id,
+      },
     });
   }
 
-  updateTasksArray() {
+  updateTasksArray(e) {
+    e.preventDefault();
     this.setState(prevState => ({
-      tasksArray: [...prevState.tasksArray, prevState.inputValue],
+      tasksArray: [...prevState.tasksArray, prevState.task],
+      task: {
+        inputValue: prevState.task.inputValue,
+        id: uniqid(),
+      },
     }));
-    console.log(this.state);
-  }
-
-  passState() {
-    console.log(this.state.tasksArray);
   }
 
   render() {
     const updateInput = this.updateInput.bind(this);
     const updateTasksArray = this.updateTasksArray.bind(this);
+    const taskArray = this.state.tasksArray;
     return (
       <div className="App">
         <InputManager handleInput={updateInput} addTask={updateTasksArray} />
-        <Overview tasks={this.state.tasksArray} />
+        <Overview tasks={taskArray} />
       </div>
     );
   }
