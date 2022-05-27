@@ -12,7 +12,7 @@ This project is part of the Odinn Project React-Series. The intent behind it is 
 
 # Approach
 
-The build can be broken down in two pieces: Task - Manager, and Overview. Everything is handled in state. The user is able to submit a value (submit a form) and for each submit made an HTML list-element, is rendered in the Overview. The list elements are generated with a unique id , making use of <a href="https://www.npmjs.com/package/uniqid">uniqid</a>.
+The build can be broken down in two pieces: Task - Manager, and Overview. Everything is handled in state. The user is able to submit a value (submit a form) and for each submit made an HTML list-element, is rendered in the Overview. The list elements are generated with a unique id , making use of <a href="https://www.npmjs.com/package/uniqid">uniqid</a>. We are also using the map's method index position while displaying each list element, to represent it's order in the list ( as stated by the OTP , we could use an ordered list, but where's the fun in that? )
 
 Later in development we are rendering also rendering two buttons . One for deleting the corresponding element and one for editing said element. Since everything is managed by state, we are making heavy use of React's built-in methods for setting State and rendering along with array filter and map methods.
 
