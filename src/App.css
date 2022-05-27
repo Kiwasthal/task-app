@@ -9,10 +9,9 @@ body {
   width: 100vw;
   display: grid;
   grid-template-areas:
-    'head head head'
     'emptyR inputManager emptyL'
-    'emptyR taskDisplay emptyL';
-  grid-template-rows: 10vh 30vh 1fr;
+    'emptyR taskDisplay emptyL'
+    'footer footer footer';
+  grid-template-rows: 20vh 1fr 10vh;
   justify-content: center;
-  align-items: center;
 }

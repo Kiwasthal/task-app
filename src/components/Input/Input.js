@@ -1,9 +1,10 @@
-import StyledInput from './Input.styles';
+import { StyledInput } from '../StyledComponents/styledComponents.styles';
 import React, { Component } from 'react';
 
 export class TaskInput extends Component {
   render() {
-    return <StyledInput />;
+    const { handleInput } = this.props;
+    return <StyledInput onChange={handleInput} />;
   }
 }
 
