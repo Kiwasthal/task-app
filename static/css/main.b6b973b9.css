@@ -1,0 +1,2 @@
+:root{font-family:Courier New,Courier,monospace}body{margin:0;padding:0}.App{display:grid;grid-template-areas:"emptyR inputManager emptyL" "emptyR taskDisplay emptyL" "footer footer footer";grid-template-rows:20vh 1fr 10vh;height:100vh;justify-content:center;width:100vw}
+/*# sourceMappingURL=main.b6b973b9.css.map*/
