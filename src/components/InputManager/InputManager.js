@@ -1,7 +1,7 @@
 import { StyledInputManager } from '../StyledComponents/styledComponents.styles';
 import AddButton from '../Button/Button';
 import TaskInput from '../Input/Input';
-import React, { Component } from 'react';
+import { Component } from 'react';
 
 class InputManager extends Component {
   render() {

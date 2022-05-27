@@ -51,6 +51,31 @@ const StyledOverview = styled.div`
   border: 2px solid #ddd;
   border-top: none;
   grid-area: taskDisplay;
+  display: flex;
+  flex-direction: column;
+  justify-items: space-evenly;
+  align-items: center;
 `;
 
-export { StyledAddBUtton, StyledInput, StyledInputManager, StyledOverview };
+const StyledListItem = styled.li`
+  margin-top: 4px;
+  font-size: 24px;
+  color: #4ade80;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 5px;
+  list-style-type: none;
+  width: 90%;
+  border: 2px solid #ddd;
+  height: 5%;
+  display: flex;
+  align-items: center;
+`;
+
+export {
+  StyledAddBUtton,
+  StyledInput,
+  StyledInputManager,
+  StyledOverview,
+  StyledListItem,
+};

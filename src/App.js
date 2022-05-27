@@ -1,9 +1,7 @@
 import { Component } from 'react';
-// import StyledInput from './components/Input/Input';
 import './App.css';
 import InputManager from './components/InputManager/InputManager';
 import Overview from './components/Overview/Overview';
-import styled from 'styled-components';
 
 class App extends Component {
   constructor(props) {
@@ -23,6 +21,11 @@ class App extends Component {
     this.setState(prevState => ({
       tasksArray: [...prevState.tasksArray, prevState.inputValue],
     }));
+    console.log(this.state);
+  }
+
+  passState() {
+    console.log(this.state.tasksArray);
   }
 
   render() {
@@ -31,7 +34,7 @@ class App extends Component {
     return (
       <div className="App">
         <InputManager handleInput={updateInput} addTask={updateTasksArray} />
-        <Overview />
+        <Overview tasks={this.state.tasksArray} />
       </div>
     );
   }
